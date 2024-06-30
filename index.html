@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>HTML Form</title>
     <style>
@@ -12,29 +11,25 @@
             height: 100vh;
             margin: 0;
         }
-
         .lab {
-            border: 5px solid orange;
+            border: 5px solid;
             border-radius: 10px;
             padding-left: 15px;
             padding-top: 3px;
             padding-bottom: 3px;
-            width: 100px;
+            background-color: orange;
+            width: 190px;
         }
-
         .main {
-            border:1px solid #ccc;
+            border: 1px solid #ccc;
             padding: 20px;
             width: 650px;
         }
-
-
         label {
             font-size: 14px;
             display: block;
             margin-bottom: 5px;
         }
-
         input[type="text"],
         input[type="password"] {
             width: 90%;
@@ -43,11 +38,9 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-
         .wrap {
             text-align: center;
         }
-
         button {
             padding: 10px 20px;
             margin: 5px 0;
@@ -62,12 +55,10 @@
         }
     </style>
 </head>
-
 <body>
-    
     <div class="main">
         <div class="lab">
-            <a href="Clickjacking.html" target="_blank" style="color:black;"> Go To LAB</a>
+            <a href="clickjacking.html" target="_blank" style="color: black;"> Go To ANOTHER PAGE</a>
         </div>
         <p>ORIGINAL WEBPAGE</p>
         <h1>ClickJacking Login Example</h1>
@@ -75,23 +66,20 @@
         <form action="">
             <label for="first">Username:</label>
             <input type="text" id="first" name="first" placeholder="Enter your Username" required>
-
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" placeholder="Enter your Password" required>
-
             <div class="wrap">
                 <br>
                 <button type="submit">Submit</button>
-                <button id="clickjacking" type="button">Delete</button>
+                <button id="clickjacking" type="reset">Delete</button>
             </div>
             <script>
                   document.querySelector('form').addEventListener('submit', function(event) {
                       event.preventDefault();
-                      alert("Form Submitted!");
+                      alert("Login Successful!");
                   });
-          
                   document.getElementById("clickjacking").addEventListener("click", function() {
-                      alert("Account Deleted!");
+                      alert("OPPS!! Account Deleted!");
                   });
               </script>
         </form>
@@ -99,8 +87,5 @@
             <a href="#" style="text-decoration: none;">Create an account</a>
         </p>
     </div>
-
-    
 </body>
-
 </html>
