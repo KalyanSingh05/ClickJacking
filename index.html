@@ -1,91 +1,39 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>HTML Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .lab {
-            border: 5px solid;
-            border-radius: 10px;
-            padding-left: 15px;
-            padding-top: 3px;
-            padding-bottom: 3px;
-            background-color: orange;
-            width: 190px;
-        }
-        .main {
-            border: 1px solid #ccc;
-            padding: 20px;
-            width: 650px;
-        }
-        label {
-            font-size: 14px;
-            display: block;
-            margin-bottom: 5px;
-        }
-        input[type="text"],
-        input[type="password"] {
-            width: 90%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .wrap {
-            text-align: center;
-        }
-        button {
-            padding: 10px 20px;
-            margin: 5px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        p {
-            font-size: 14px;
-            margin-top: 20px;
-            text-align: center;
-        }
-    </style>
+    <title>User Form</title>
+    <link rel="stylesheet" href="web-page-style.css">
 </head>
+
 <body>
     <div class="main">
         <div class="lab">
-            <a href="Clickjacking.html" target="_blank" style="color: black;"> Go To ANOTHER PAGE</a>
+            <a href="Clickjacking.html" target="_blank">
+                Go To ANOTHER PAGE
+            </a>
         </div>
-        <p>ORIGINAL WEBPAGE</p>
+        <p id="heading">ORIGINAL WEBPAGE</p>
         <h1>ClickJacking Login Example</h1>
-        <h3>Enter your login credentials</h3>
         <form action="">
+            <h3>Enter your login credentials</h3>
             <label for="first">Username:</label>
-            <input type="text" id="first" name="first" placeholder="Enter your Username" required>
+            <input class="fields" type="text" id="first" name="first" placeholder="Enter your Username" required>
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+            <input class="fields" type="password" id="password" name="password" placeholder="Enter your Password"
+                required>
             <div class="wrap">
-                <br>
                 <button type="submit">Submit</button>
-                <button id="clickjacking" type="reset">Delete</button>
+                <button id="clickjacking" type="reset" style="opacity: .1; cursor: default;">Delete</button>
             </div>
-            <script>
-                  document.querySelector('form').addEventListener('submit', function(event) {
-                      event.preventDefault();
-                      alert("Login Successful!");
-                  });
-                  document.getElementById("clickjacking").addEventListener("click", function() {
-                      alert("OPPS!! Account Deleted!");
-                  });
-              </script>
         </form>
-        <p>Not registered?
-            <a href="#" style="text-decoration: none;">Create an account</a>
+        <p id="newUser">
+            Not registered yet?
+            <a href="#" target="_blank">Create an account</a>
+            now
         </p>
     </div>
+    <script src="web-page-script.js"></script>
 </body>
+
 </html>

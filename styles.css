@@ -1,0 +1,88 @@
+#info {
+  z-index: 2;
+  gap: 10px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+  justify-content: space-around;
+}
+
+#info button {
+  background-color: #99cd3261;
+  border-radius: 1.1rem;
+  padding: .9rem 1.3rem;
+}
+
+#info button:hover {
+  background-color: #c4ea7961;
+  color: #ee8b8b;
+  font-size: 1rem;
+  padding: .7rem 1rem;
+}
+
+#displayInfo {
+  height: 25rem;
+  max-width: fit-content;
+  top: 14%;
+  left: 23%;
+  display: none;
+  padding: .4rem 1rem;
+  z-index: 10;
+  position: fixed;
+  border: .3rem #c4ea7961 solid;
+  border-radius: 1rem;
+  background-color: #f67862;
+  color: #34174f;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: 'Gill Sans', sans-serif;
+  font-style: oblique;
+  overflow-y: scroll;
+}
+
+#ok {
+  float: right;
+  padding: .5rem .9rem;
+  color: #0a0fa1;
+  border-radius: 1rem;
+}
+
+#ok:hover {
+  padding: .5rem 1rem;
+  color: #f1f6f3;
+  background-color: purple;
+  z-index: 1;
+}
+
+#Vuln {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+#attackButton {
+  position: absolute;
+  left: 52.5%;
+  top: 72.1%;
+  cursor: pointer;
+  border: 2px solid #e99aa7b4;
+  border-radius: 4rem;
+  padding: .5rem 3rem;
+}
+
+#attackButton:hover {
+  padding: .6rem 3.3rem;
+}
+
+#innerPage {
+  height: 35rem;
+  width: 64rem;
+  margin: 0;
+  background-color: antiquewhite;
+  scroll-behavior: unset;
+  overflow: hidden;
+  resize: none;
+  border: none;
+  border-radius: .7rem;
+}

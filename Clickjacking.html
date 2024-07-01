@@ -1,72 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Clickjacking Demo</title>
-  <style>
-    #iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 1;
-    }
-    
-    #info {
-      position: fixed;
-      top: -60%;
-      left: -45%;
-      transform: translate(-50%, -50%);
-      width: 18.6%;
-      height: 10%;
-      z-index: 2;
-    }
-    
-    #overlay {
-      position: fixed;
-      top: 119%;
-      left: 95.7%;
-      transform: translate(-50%, -50%);
-      width: 90%;
-      height: 100%;
-      background: transparent;
-      z-index: 2;
-    }
-  </style>
-</head>
-<body>
-  <div id="overlay">
-  <div id="info">
-    <button type="button" onclick="showLabInfo()">Show Lab INFO</button><br><br>
-    <button type="button" onclick="showMitigations()">Let's Secure IT</button>
-  </div>
-  <button id="attackButton" style="width: 70px;height: 35px;border: none; border-radius: 4px;">About</button>
-  </div>
-   <iframe id="iframe" src="index.html"></iframe>
-   <script>
-      function showLabInfo() {
-      const labInfo = "Welcome to the Clickjacking Lab!\n\nObjective: Demonstrate a clickjacking attack on a web application's login form.\n\nInstructions:\n1. Open the target page.\n2. Open the attack page.\n3. Observe the clickjacking effect.\n\nMitigation: Use the X-Frame-Options header and Content Security Policy.";
-      alert(labInfo);
-    }
 
-      function showMitigations() {
-        const mitigations = "Mitigations:\n" +
-                      "1. Use the X-Frame-Options header:\n" +
-                      "   - DENY: Prevents any domain from framing the content.\n" +
-                      "   - SAMEORIGIN: Allows the content to be framed only by the same site.\n\n" +
-                      "2. Implement Content Security Policy (CSP) with frame-ancestors directive:\n" +
-                      "   - frame-ancestors 'none';\n" +
-                      "   - frame-ancestors 'self';\n\n" +
-                      "3. Use JavaScript frame-busting:\n" +
-                      "   if (top !== self) { top.location = self.location; }\n\n" +
-                      "4. Set SameSite cookie attribute to mitigate CSRF:\n" +
-                      "   - Set-Cookie: mycookie=value; SameSite=Strict;\n";
-        alert(mitigations);
-      }
-      
-       document.getElementById("attackButton").addEventListener("click", function() {
-           document.getElementById("iframe").contentWindow.document.getElementById("clickjacking").click();
-       });
-   </script>
+<head>
+  <title>Clickjacking Demo Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div>
+    <div id="info">
+      <button type="button" onclick="showLabInfo()">Show Lab INFO</button>
+      <button type="button" onclick="showMitigations()">Let's Secure IT</button>
+    </div>
+    <div id="displayInfo">
+      <p id="displayInfoText"></p>
+      <button id="ok" onclick="hideInfo()">OK</button>
+    </div>
+  </div>
+  <div id="Vuln">
+    <button id="attackButton">About</button>
+    <iframe id="innerPage" src="index.html"></iframe>
+  </div>
+  <script src="scripts.js"></script>
 </body>
+
 </html>
