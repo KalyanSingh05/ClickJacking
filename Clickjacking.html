@@ -38,7 +38,7 @@
   <div id="overlay">
   <div id="info">
     <button type="button" onclick="showLabInfo()">Show Lab INFO</button><br><br>
-    <button type="button" onclick="showMitigations()">Let's Secure IT</button>
+    <button type="button"><a href="mitigations.html" target="_blank" style="color: black;">Let's Secure IT</a></button>
   </div>
   <button id="attackButton" style="width: 70px;height: 35px;border: none; border-radius: 4px;">About</button>
   </div>
@@ -49,21 +49,6 @@
       alert(labInfo);
     }
 
-      function showMitigations() {
-        const mitigations = "Mitigations:\n" +
-                      "1. Use the X-Frame-Options header:\n" +
-                      "   - DENY: Prevents any domain from framing the content.\n" +
-                      "   - SAMEORIGIN: Allows the content to be framed only by the same site.\n\n" +
-                      "2. Implement Content Security Policy (CSP) with frame-ancestors directive:\n" +
-                      "   - frame-ancestors 'none';\n" +
-                      "   - frame-ancestors 'self';\n\n" +
-                      "3. Use JavaScript frame-busting:\n" +
-                      "   if (top !== self) { top.location = self.location; }\n\n" +
-                      "4. Set SameSite cookie attribute to mitigate CSRF:\n" +
-                      "   - Set-Cookie: mycookie=value; SameSite=Strict;\n";
-        alert(mitigations);
-      }
-      
        document.getElementById("attackButton").addEventListener("click", function() {
            document.getElementById("iframe").contentWindow.document.getElementById("clickjacking").click();
        });
